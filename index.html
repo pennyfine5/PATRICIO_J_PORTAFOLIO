@@ -131,14 +131,32 @@ body.dk .sico-img{filter:invert(1) sepia(1) saturate(5) hue-rotate(80deg)}
 footer{display:none;text-align:center;padding:14px;color:rgba(255,255,255,.5);font-family:"Press Start 2P",monospace;font-size:7px;line-height:2.4}
 body.dk footer{color:rgba(0,255,65,.35)}
 @media(max-width:640px){.hero,.ai,.pg,.fg{display:block}.ai>div,.pg .pc,.xp-item{margin-bottom:14px}.sicons{display:none}}
+
+#ccard-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99990;align-items:center;justify-content:center}
+#ccard-overlay.show{display:flex}
+#ccard{background:var(--wb);border:2px solid var(--bk);box-shadow:var(--sl);width:320px;animation:fiu .25s ease both;font-family:"Press Start 2P",monospace}
+.ccard-tbar{background:var(--accent);color:var(--at);padding:5px 10px;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--bk)}
+.ccard-tbar .tl{flex-shrink:0}.ccard-title{flex:1;font-size:8px;text-align:center}
+.ccard-body{padding:22px 24px 18px}
+.ccard-avatar{width:60px;height:60px;background:var(--ic-patricio) center/70% no-repeat var(--cb);border:2px solid var(--bk);box-shadow:var(--sh);margin:0 auto 14px}
+.ccard-name{text-align:center;font-size:9px;color:var(--tx);margin-bottom:4px;line-height:1.8}
+.ccard-role{text-align:center;font-size:7px;color:var(--tm);margin-bottom:18px}
+.ccard-rows{display:flex;flex-direction:column;gap:8px}
+.ccard-row{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--gl);border:1px solid var(--bk)}
+.ccard-lbl{font-size:6px;color:var(--tm);width:44px;flex-shrink:0}
+.ccard-val{font-size:14px;color:var(--tx);font-family:"VT323",monospace;word-break:break-all}
+.ccard-val a{color:var(--accent);text-decoration:none}.ccard-val a:hover{text-decoration:underline}
+body.dk .ccard-val a{color:var(--at)}
+.ccard-foot{display:flex;gap:8px;padding:12px 24px 16px;border-top:2px solid var(--bk);margin-top:14px}
+.ccard-foot .btn{flex:1;justify-content:center;font-size:6px}
 </style></head><body>
 <div id="boot"><div class="b-icon"></div><div class="b-title">PATRICIO OS v3.0<br><small>Data Analyst Edition</small></div><div class="b-wrap"><div class="b-lbl" id="blbl">Iniciando sistema...</div><div class="b-bar"><div class="b-fill" id="bfill"></div></div></div><div class="b-log" id="blog"></div></div>
 <div class="tbar"><span class="ti"></span><span class="ti">Archivo</span><span class="ti" onclick="openW('w3')">Proyectos</span><span class="ti" onclick="openW('w5')">Experiencia</span><span class="ti" onclick="openW('w4')">Contacto</span><div class="tr"><button class="mbt" id="mbt" onclick="toggleDk()">TERMINAL</button><span> 128MB</span><span id="clk">00:00</span></div></div>
-<div class="sicons"><a href="https://github.com/pennyfine5" class="sico" target="_blank"><div class="sico-img" style="background-image:var(--ic-github)"></div><div class="sico-lbl">GitHub</div></a><a href="https://www.linkedin.com/in/patricio-puerto-basteris" class="sico" target="_blank"><div class="sico-img" style="background-image:var(--ic-linkedin)"></div><div class="sico-lbl">LinkedIn</div></a><a href="#" class="sico" onclick="openW('w4');return false"><div class="sico-img" style="background-image:var(--ic-mail)"></div><div class="sico-lbl">Correo</div></a><div class="sico"><div class="sico-img" style="background-image:var(--ic-papelera)"></div><div class="sico-lbl">Papelera</div></div></div>
+<div class="sicons"><a href="https://github.com/pennyfine5" class="sico" target="_blank"><div class="sico-img" style="background-image:var(--ic-github)"></div><div class="sico-lbl">GitHub</div></a><a href="https://www.linkedin.com/in/patricio-puerto-basteris" class="sico" target="_blank"><div class="sico-img" style="background-image:var(--ic-linkedin)"></div><div class="sico-lbl">LinkedIn</div></a><a href="#" class="sico" onclick="openCard();return false"><div class="sico-img" style="background-image:var(--ic-mail)"></div><div class="sico-lbl">Correo</div></a><div class="sico"><div class="sico-img" style="background-image:var(--ic-papelera)"></div><div class="sico-lbl">Papelera</div></div></div>
 <div id="desktop"><div id="icon-area"></div>
 <div class="win" id="w1">
 <div class="tbar-win"><div class="tls"><div class="tl r" onclick="closeW('w1')"><span class="x">&#x2715;</span></div><div class="tl y" onclick="minW('w1')"><span class="x">&#x2212;</span></div><div class="tl g" onclick="fsW('w1')"><span class="x">+</span></div></div><div class="tb-ico" style="background-image:var(--ic-patricio)"></div><span class="tb-txt">patricio.portfolio</span></div>
-<div class="wb"><div class="hero"><div class="av"></div><div class="ht"><h1>PATRICIO J<br>PUERTO B</h1><div class="role" style="margin-top:8px">Data Analyst</div><div class="meta"><span>Mexico, Yucatan</span><span>ES / EN</span><span>Disponible</span><span>puerto.patricio.jb@gmail.com</span></div><p>Analista de datos con mentalidad innovadora. Combino an&#225;lisis estad&#237;stico con pensamiento creativo para dise&#241;ar soluciones que resuelven problemas reales.</p><div class="brow"><a href="https://github.com/pennyfine5" class="btn" target="_blank"> GitHub</a><a href="https://www.linkedin.com/in/patricio-puerto-basteris" class="btn" target="_blank"> LinkedIn</a><a href="https://drive.google.com/file/d/1gp8y66JeXcnf42ke59D0-I3ZbAdByCZx/view?usp=sharing" class="btn dl" target="_blank">CV PDF</a><button class="btn" onclick="openW('w4')"> Contacto</button></div></div></div></div>
+<div class="wb"><div class="hero"><div class="av"></div><div class="ht"><h1>PATRICIO J<br>PUERTO B</h1><div class="role" style="margin-top:8px">Data Analyst</div><div class="meta"><span>Mexico, Yucatan</span><span>ES / EN</span><span>Disponible</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3343465641475c1d435247415a505a5c1d595173545e525a5f1d505c5e">[email&#160;protected]</a></span></div><p>Analista de datos con mentalidad innovadora. Combino an&#225;lisis estad&#237;stico con pensamiento creativo para dise&#241;ar soluciones que resuelven problemas reales.</p><div class="brow"><a href="https://github.com/pennyfine5" class="btn" target="_blank"> GitHub</a><a href="https://www.linkedin.com/in/patricio-puerto-basteris" class="btn" target="_blank"> LinkedIn</a><a href="https://drive.google.com/file/d/1gp8y66JeXcnf42ke59D0-I3ZbAdByCZx/view?usp=sharing" class="btn dl" target="_blank">CV PDF</a><button class="btn" onclick="openW('w4')"> Contacto</button></div></div></div></div>
 <div class="sbar"><span> (+52) 999-256-15-27</span><span>Online </span></div></div>
 <div class="win" id="w2">
 <div class="tbar-win"><div class="tls"><div class="tl r" onclick="closeW('w2')"><span class="x">&#x2715;</span></div><div class="tl y" onclick="minW('w2')"><span class="x">&#x2212;</span></div><div class="tl g" onclick="fsW('w2')"><span class="x">+</span></div></div><div class="tb-ico" style="background-image:var(--ic-sobre)"></div><span class="tb-txt">sobre_mi.txt</span></div>
@@ -169,7 +187,11 @@ body.dk footer{color:rgba(0,255,65,.35)}
 </div>
 <footer id="footer">&#169; 2026 Patricio J Puerto B | Data Analyst Portfolio v3.0<br>Python &#183; SQL &#183; Streamlit &#183; M&#233;xico, Yucat&#225;n</footer>
 <div id="dock"><span class="dock-empty" id="dock-empty">No hay ventanas minimizadas</span></div>
-<script data-cfasync="false">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+function openCard(){document.getElementById('ccard-overlay').classList.add('show');}
+function closeCard(){document.getElementById('ccard-overlay').classList.remove('show');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCard();});
+</script><script data-cfasync="false">
 var _em = atob('cHVlcnRvLnBhdHJpY2lvLmpiQGdtYWlsLmNvbQ==');
 document.getElementById('fbar2').textContent = _em;
 
@@ -235,6 +257,47 @@ function toggleDk(){document.body.classList.toggle('dk');document.getElementById
 function sendF(){var n=document.getElementById('fn').value.trim(),e=document.getElementById('fe').value.trim(),s=document.getElementById('fs2').value.trim(),m=document.getElementById('fm').value.trim(),msg=document.getElementById('fmsg');msg.className='fmsg';if(!n||!e||!m){msg.textContent='Nombre, email y mensaje son obligatorios.';msg.className='fmsg er';return;}if(e.indexOf('@')<1){msg.textContent='Email invalido.';msg.className='fmsg er';return;}window.location.href='mai'+'lto:'+_em+'?subject='+encodeURIComponent(s||'Portfolio - Contacto')+'&body='+encodeURIComponent('Hola Patricio, soy '+n+'. '+m);msg.textContent='Abriendo cliente de correo...';msg.className='fmsg ok';document.getElementById('fbar').textContent='Listo';}
 function clearF(){['fn','fe','fs2','ft','fm'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('fmsg').textContent='';document.getElementById('fbar').textContent='Esperando input...';}
 ['fn','fe','fm'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){var v=['fn','fe','fm'].filter(function(x){return document.getElementById(x).value.trim();}).length;document.getElementById('fbar').textContent=v===0?'Esperando input...':v===3?'Listo para enviar':(v+'/3 completados');});});
-</script></body></html>
+function openCard(){document.getElementById('ccard-overlay').classList.add('show');}
+function closeCard(){document.getElementById('ccard-overlay').classList.remove('show');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCard();});
+</script>
+
+<div id="ccard-overlay" onclick="if(event.target===this)closeCard()">
+  <div id="ccard">
+    <div class="ccard-tbar">
+      <div class="tls"><div class="tl r" onclick="closeCard()"><span class="x">&#x2715;</span></div></div>
+      <div class="ccard-title">contacto.vcf</div>
+    </div>
+    <div class="ccard-body">
+      <div class="ccard-avatar"></div>
+      <div class="ccard-name">PATRICIO J<br>PUERTO B</div>
+      <div class="ccard-role">Data Analyst &mdash; Mexico, Yucatan</div>
+      <div class="ccard-rows">
+        <div class="ccard-row">
+          <div class="ccard-lbl">CORREO</div>
+          <div class="ccard-val"><a href="mailto:puerto.patricio.jb@gmail.com">puerto.patricio.jb@gmail.com</a></div>
+        </div>
+        <div class="ccard-row">
+          <div class="ccard-lbl">TELEFONO</div>
+          <div class="ccard-val"><a href="tel:+529992561527">(+52) 999-256-15-27</a></div>
+        </div>
+        <div class="ccard-row">
+          <div class="ccard-lbl">LINKEDIN</div>
+          <div class="ccard-val"><a href="https://www.linkedin.com/in/patricio-puerto-basteris" target="_blank">patricio-puerto-basteris</a></div>
+        </div>
+        <div class="ccard-row">
+          <div class="ccard-lbl">GITHUB</div>
+          <div class="ccard-val"><a href="https://github.com/pennyfine5" target="_blank">github.com/pennyfine5</a></div>
+        </div>
+      </div>
+      <div class="ccard-foot">
+        <button class="btn" onclick="closeCard()">CERRAR</button>
+        <button class="btn dl" onclick="openW('w4');closeCard()">ENVIAR MENSAJE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body></html>
 
 
